@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import AnimatedHeading from "@/components/motion/AnimatedHeading";
+import cityBg from "@/assets/backgrounds/usecases-city.jpg";
 
 const WHATSAPP_URL = "https://wa.me/551130610923?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20atendimento.";
 
@@ -17,55 +19,76 @@ const useCases = [
 
 const UseCasesSection = () => {
   return (
-    <section className="py-32 md:py-40 bg-gradient-hero">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          className="max-w-3xl mb-20"
-        >
-          <p className="text-xs uppercase tracking-[0.3em] text-gold mb-6 font-medium">
+    <section className="relative py-32 md:py-40 bg-gradient-hero overflow-hidden">
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <img src={cityBg} alt="" className="w-full h-full object-cover opacity-25" loading="lazy" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(220 22% 7%) 0%, hsl(220 22% 7% / 0.75) 25%, hsl(220 22% 7% / 0.85) 75%, hsl(220 22% 7%) 100%)" }} />
+      </div>
+      <div className="container relative mx-auto px-6">
+        <div className="max-w-3xl mb-20">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-xs uppercase tracking-[0.3em] text-gold mb-6 font-medium"
+          >
             Quando avaliar
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tightest">
-            Momentos em que valuation
-            <span className="italic font-normal text-gold"> muda a decisão.</span>
-          </h2>
-        </motion.div>
+          </motion.p>
+          <AnimatedHeading
+            as="h2"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tightest"
+          >
+            Momentos em que valuation <em className="italic font-normal text-gold">muda a decisão.</em>
+          </AnimatedHeading>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-10 gap-y-12">
-          {useCases.map((uc, i) => (
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ staggerChildren: 0.05, delayChildren: 0.2 }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-10 gap-y-12"
+        >
+          {useCases.map((uc) => (
             <motion.div
               key={uc.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: (i % 5) * 0.05 }}
-              className="border-t border-border pt-6"
+              variants={{
+                hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+                show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
+              }}
+              className="group border-t border-border pt-6 transition-all duration-500 hover:border-[hsl(38_55%_58%_/_0.6)]"
             >
-              <h3 className="font-display text-lg font-medium mb-3 tracking-tight">
+              <h3 className="font-display text-lg font-medium mb-3 tracking-tight transition-colors group-hover:text-gold">
                 {uc.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{uc.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-20 flex justify-center"
         >
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-sm tracking-wide text-gold border-b border-gold-soft pb-1 hover:border-[hsl(var(--gold))] transition-colors"
+            className="group inline-flex items-center gap-3 text-sm tracking-wide text-gold border-b border-gold-soft pb-1 hover:border-[hsl(var(--gold))] transition-colors"
           >
             Converse com nossa equipe
-            <span aria-hidden>→</span>
+            <motion.span
+              aria-hidden
+              className="inline-block"
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              →
+            </motion.span>
           </a>
         </motion.div>
       </div>
