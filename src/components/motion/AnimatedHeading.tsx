@@ -10,7 +10,7 @@ interface AnimatedHeadingProps {
 }
 
 const wordVariants: Variants = {
-  hidden: { y: "100%", opacity: 0, filter: "blur(6px)" },
+  hidden: { y: 24, opacity: 0, filter: "blur(8px)" },
   show: {
     y: 0,
     opacity: 1,
@@ -80,11 +80,7 @@ const AnimatedHeading = ({
             </motion.span>
           );
           const wrapped = tok.wrapper ? tok.wrapper(inner) : inner;
-          return (
-            <span key={i} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "bottom" }}>
-              {wrapped}
-            </span>
-          );
+          return <span key={i} style={{ display: "inline-block" }}>{wrapped}</span>;
         })}
       </motion.span>
     </Tag>
