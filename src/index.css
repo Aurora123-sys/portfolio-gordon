@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 18% 9%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 18% 9%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 220 35% 14%;
+    --primary-foreground: 40 30% 96%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 220 12% 18%;
+    --muted-foreground: 40 10% 65%;
+
+    --accent: 38 55% 58%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 38 55% 58%;
+
+    --radius: 0.5rem;
+
+    --gold: 38 55% 58%;
+    --gold-foreground: 220 30% 10%;
+    --gold-soft: 38 45% 70%;
+
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 220 35% 14%;
+    --sidebar-primary-foreground: 40 30% 96%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 38 55% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(38 60% 70%) 0%, hsl(38 55% 50%) 100%);
+  }
+
+  .bg-gradient-hero {
+    background:
+      radial-gradient(1200px 600px at 80% 10%, hsl(38 50% 30% / 0.10), transparent 60%),
+      radial-gradient(900px 500px at 10% 90%, hsl(220 50% 18% / 0.35), transparent 60%),
+      linear-gradient(180deg, hsl(220 22% 7%) 0%, hsl(220 20% 5%) 100%);
+  }
+
+  .bg-grid-faint {
+    background-image:
+      linear-gradient(to right, hsl(40 20% 95% / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(40 20% 95% / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-gradient-card {
+    background: linear-gradient(145deg, hsl(220 18% 10%), hsl(220 20% 7%));
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 0 1px hsl(38 55% 58% / 0.15), 0 20px 50px -20px hsl(38 55% 40% / 0.25);
+  }
+
+  .border-soft {
+    border: 1px solid hsl(220 15% 18%);
+  }
+
+  .border-gold-soft {
+    border: 1px solid hsl(38 55% 58% / 0.25);
+  }
+
+  .divider-rule {
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(38 55% 58%), transparent);
+  }
+}
