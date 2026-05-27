@@ -9,8 +9,8 @@ const ContactSection = () => {
   return (
     <section id="contato" className="py-32 md:py-40 bg-gradient-hero relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img src={skylineBg} alt="" className="w-full h-full object-cover opacity-30" loading="lazy" />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, hsl(220 22% 7% / 0.55) 0%, hsl(220 22% 6%) 85%)" }} />
+        <img src={skylineBg} alt="" className="w-full h-full object-cover opacity-65" loading="lazy" />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, hsl(220 22% 7% / 0.45) 0%, hsl(220 22% 6% / 0.92) 90%)" }} />
       </div>
       <motion.div
         className="absolute inset-0 bg-grid-faint opacity-40"

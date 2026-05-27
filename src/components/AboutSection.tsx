@@ -14,9 +14,9 @@ const AboutSection = () => {
   return (
     <section id="sobre" className="relative py-32 md:py-40 bg-background overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img src={libraryBg} alt="" className="w-full h-full object-cover opacity-20" loading="lazy" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(220 20% 6%) 0%, hsl(220 20% 6% / 0.80) 30%, hsl(220 20% 6% / 0.80) 70%, hsl(220 20% 6%) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, hsl(220 20% 6% / 0.92) 0%, hsl(220 20% 6% / 0.50) 50%, hsl(220 20% 6% / 0.80) 100%)" }} />
+        <img src={libraryBg} alt="" className="w-full h-full object-cover opacity-60" loading="lazy" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(220 20% 6%) 0%, hsl(220 20% 6% / 0.45) 25%, hsl(220 20% 6% / 0.55) 75%, hsl(220 20% 6%) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, hsl(220 20% 6% / 0.80) 0%, hsl(220 20% 6% / 0.25) 55%, hsl(220 20% 6% / 0.55) 100%)" }} />
       </div>
       <div className="container relative mx-auto px-6">
         <div ref={ref} className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">

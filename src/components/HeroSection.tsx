@@ -47,16 +47,16 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-[0.28]"
+          className="w-full h-full object-cover opacity-[0.65]"
           loading="eager"
           fetchpriority="high"
         />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(220 22% 6% / 0.55) 0%, hsl(220 22% 6% / 0.80) 60%, hsl(220 22% 6%) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, hsl(220 22% 6% / 0.90) 0%, hsl(220 22% 6% / 0.35) 60%, transparent 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(220 22% 6% / 0.25) 0%, hsl(220 22% 6% / 0.55) 70%, hsl(220 22% 6%) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, hsl(220 22% 6% / 0.85) 0%, hsl(220 22% 6% / 0.20) 55%, transparent 100%)" }} />
       </motion.div>
 
       <motion.div
-        className="absolute inset-0 bg-grid-faint opacity-50"
+        className="absolute inset-0 bg-grid-faint opacity-25"
         style={{ x: useTransform(sx, (v) => v * 0.4), y: useTransform(sy, (v) => v * 0.4) }}
         aria-hidden
       />

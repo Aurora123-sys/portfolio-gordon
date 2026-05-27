@@ -21,8 +21,8 @@ const UseCasesSection = () => {
   return (
     <section className="relative py-32 md:py-40 bg-gradient-hero overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img src={cityBg} alt="" className="w-full h-full object-cover opacity-25" loading="lazy" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(220 22% 7%) 0%, hsl(220 22% 7% / 0.75) 25%, hsl(220 22% 7% / 0.85) 75%, hsl(220 22% 7%) 100%)" }} />
+        <img src={cityBg} alt="" className="w-full h-full object-cover opacity-60" loading="lazy" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, hsl(220 22% 7%) 0%, hsl(220 22% 7% / 0.40) 25%, hsl(220 22% 7% / 0.55) 75%, hsl(220 22% 7%) 100%)" }} />
       </div>
       <div className="container relative mx-auto px-6">
         <div className="max-w-3xl mb-20">
