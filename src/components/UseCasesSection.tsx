@@ -78,7 +78,7 @@ const UseCasesSection = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 text-sm tracking-wide text-gold border-b border-gold-soft pb-1 hover:border-[hsl(var(--gold))] transition-colors"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-lg border border-gold-soft bg-[hsl(220_22%_8%_/_0.6)] backdrop-blur-sm text-gold text-xs tracking-[0.18em] uppercase font-semibold hover:bg-[hsl(var(--gold))] hover:text-[hsl(var(--gold-foreground))] hover:border-[hsl(var(--gold))] transition-colors"
           >
             Converse com nossa equipe
             <motion.span

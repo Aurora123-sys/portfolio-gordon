@@ -75,30 +75,46 @@ const ContactSection = () => {
               whileInView="show"
               viewport={{ once: true, margin: "-80px" }}
               transition={{ staggerChildren: 0.12, delayChildren: 0.9 }}
-              className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto text-left sm:text-center"
+              className="max-w-3xl mx-auto"
             >
-              {[
-                { label: "WhatsApp", value: "(11) 3061-0923", href: WHATSAPP_URL, external: true },
-                { label: "Telefone", value: "(11) 3061-0923", href: "tel:+551130610923" },
-                { label: "E-mail", value: "fernando@avaliacaodeempresa.com.br", href: "mailto:fernando@avaliacaodeempresa.com.br" },
-              ].map((c) => (
-                <motion.div
-                  key={c.label}
-                  variants={{
-                    hidden: { opacity: 0, y: 14 },
-                    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
-                  }}
-                >
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{c.label}</p>
-                  <a
-                    href={c.href}
-                    {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="text-foreground hover:text-gold transition-colors text-sm break-all"
+              <div className="grid sm:grid-cols-2 gap-8 mb-8 text-left sm:text-center">
+                {[
+                  { label: "WhatsApp", value: "(11) 3061-0923", href: WHATSAPP_URL, external: true },
+                  { label: "Telefone", value: "(11) 3061-0923", href: "tel:+551130610923" },
+                ].map((c) => (
+                  <motion.div
+                    key={c.label}
+                    variants={{
+                      hidden: { opacity: 0, y: 14 },
+                      show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+                    }}
                   >
-                    {c.value}
-                  </a>
-                </motion.div>
-              ))}
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">{c.label}</p>
+                    <a
+                      href={c.href}
+                      {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="text-foreground hover:text-gold transition-colors text-sm"
+                    >
+                      {c.value}
+                    </a>
+                  </motion.div>
+                ))}
+              </div>
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 14 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+                }}
+                className="text-center"
+              >
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">E-mail</p>
+                <a
+                  href="mailto:fernando@avaliacaodeempresa.com.br"
+                  className="inline-block text-foreground hover:text-gold transition-colors text-xs sm:text-sm whitespace-nowrap"
+                >
+                  fernando@avaliacaodeempresa.com.br
+                </a>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>

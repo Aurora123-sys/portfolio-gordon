@@ -25,8 +25,11 @@ dist-ssr
 
 # Local verification artifacts
 drive.mjs
+drive-*.mjs
 shot-*.png
+fix-*.png
 drive-home.png
+tmp-*.mjs
 playwright-report
 test-results
 

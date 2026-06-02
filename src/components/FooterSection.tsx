@@ -15,7 +15,7 @@ const FooterSection = () => {
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Contato</p>
             <ul className="space-y-2 text-sm text-foreground/80">
               <li>(11) 3061-0923</li>
-              <li className="break-all">fernando@avaliacaodeempresa.com.br</li>
+              <li className="whitespace-nowrap text-xs sm:text-sm">fernando@avaliacaodeempresa.com.br</li>
             </ul>
           </div>
           <div>
